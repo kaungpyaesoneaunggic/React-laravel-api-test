@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Create from './Create';
+import ShowAll from './ShowAll';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {
+  Link,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <nav className='d-flex flex-row justify-content-around'>
+        <li>
+        <Link to={'/'}> Show All</Link>
+        </li>
+        <li>
+        <Link to={'/create'}>Create</Link>
+        </li>
+      </nav>
+      <Routes>
+        <Route path='/' element={<ShowAll/>}/>
+        <Route path='/create' element={<Create/>}/>
+      </Routes>
     </div>
   );
 }
