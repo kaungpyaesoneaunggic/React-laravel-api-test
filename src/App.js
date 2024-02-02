@@ -1,7 +1,6 @@
 
 import './App.css';
 import Create from './Create';
-import Edit from './Edit';
 import ShowAll from './ShowAll';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {
@@ -26,7 +25,6 @@ function App() {
       <Routes>
         <Route path='/' element={<ShowAll/>}/>
         <Route path='/create' element={<Create/>}/>
-        <Route path='/edit/:id' element={<Edit/>}/>
       </Routes>
     </div>
   );
